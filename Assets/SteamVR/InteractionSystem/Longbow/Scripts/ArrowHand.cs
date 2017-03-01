@@ -33,6 +33,8 @@ namespace Valve.VR.InteractionSystem
 		private bool inNockRange = false;
 		private bool arrowLerpComplete = false;
 
+		private Rigidbody arrowRigidbody;
+
 		public SoundPlayOneshot arrowSpawnSound;
 
 		private AllowTeleportWhileAttachedToHand allowTeleport = null;

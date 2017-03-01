@@ -63,6 +63,8 @@ namespace Valve.VR.InteractionSystem
 
 		private Quaternion nockLerpStartRotation;
 
+		private ItemPackage prevArrowHandItemPackage;
+
 		public float drawOffset = 0.06f;
 
 		public LinearMapping bowDrawLinearMapping;

@@ -13,6 +13,12 @@ namespace Valve.VR.InteractionSystem
 	public class BalloonColliders : MonoBehaviour
 	{
 		public GameObject[] colliders;
+
+		private class ColliderData
+		{
+			Vector3 localPosition;
+			Quaternion localRotation;
+		}
 		private Vector3[] colliderLocalPositions;
 		private Quaternion[] colliderLocalRotations;
 

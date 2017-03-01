@@ -32,6 +32,7 @@ namespace Valve.VR.InteractionSystem
 		}
 
 		public ItemPackage _itemPackage;
+		private ItemPackage prevItemPackage;
 
 		private bool useItemPackagePreview = true;
 		private bool useFadedPreview = false;
@@ -345,4 +346,24 @@ namespace Valve.VR.InteractionSystem
 			}
 		}
 	}
+
+#if UNITY_EDITOR
+	//-------------------------------------------------------------------------
+	[CustomEditor( typeof( ItemPackageSpawner ) )]
+	public class ItemPackageSpawnerEditor : Editor
+	{
+		//-------------------------------------------------
+		public override void OnInspectorGUI()
+		{
+			if ( Selection.activeTransform )
+			{
+				ItemPackageSpawner script = target as ItemPackageSpawner;
+
+				script.itemPackage = script._itemPackage;
+			}
+
+			DrawDefaultInspector();
+		}
+	}
+#endif
 }
