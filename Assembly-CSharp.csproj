@@ -46,15 +46,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\BasicPickup.cs" />
-     <Compile Include="Assets\Scripts\GazeTrigger.cs" />
-     <Compile Include="Assets\Scripts\Generator.cs" />
-     <Compile Include="Assets\Scripts\Hover.cs" />
-     <Compile Include="Assets\Scripts\InteractionPickup.cs" />
-     <Compile Include="Assets\Scripts\LookAtMe.cs" />
-     <Compile Include="Assets\Scripts\MyMouseLook.cs" />
-     <Compile Include="Assets\Scripts\SwitchEnvironment.cs" />
-     <Compile Include="Assets\Scripts\ThrowEffects.cs" />
      <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />
      <Compile Include="Assets\SteamVR\Extras\SteamVR_LaserPointer.cs" />
      <Compile Include="Assets\SteamVR\Extras\SteamVR_Teleporter.cs" />
@@ -163,6 +154,15 @@
      <Compile Include="Assets\Vive-Teleporter\Scripts\TeleportVive.cs" />
      <Compile Include="Assets\Vive-Teleporter\Scripts\ViveNavMesh.cs" />
      <Compile Include="Assets\Vive-Teleporter\Scripts\ViveNavMeshEditor.cs" />
+     <Compile Include="Assets\_TronPuzzle\Scripts\BasicPickup.cs" />
+     <Compile Include="Assets\_TronPuzzle\Scripts\GazeTrigger.cs" />
+     <Compile Include="Assets\_TronPuzzle\Scripts\Generator.cs" />
+     <Compile Include="Assets\_TronPuzzle\Scripts\Hover.cs" />
+     <Compile Include="Assets\_TronPuzzle\Scripts\InteractionPickup.cs" />
+     <Compile Include="Assets\_TronPuzzle\Scripts\LookAtMe.cs" />
+     <Compile Include="Assets\_TronPuzzle\Scripts\MyMouseLook.cs" />
+     <Compile Include="Assets\_TronPuzzle\Scripts\SwitchEnvironment.cs" />
+     <Compile Include="Assets\_TronPuzzle\Scripts\ThrowEffects.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />
