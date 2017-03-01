@@ -89,6 +89,7 @@ public class TeleportVive : MonoBehaviour {
 
         Vector3 p0, p1, p2, p3;
         if (GetChaperoneBounds(out p0, out p1, out p2, out p3))
+<<<<<<< HEAD
         {
             // Rotate to match camera rig rotation
             var originRotationMatrix = Matrix4x4.TRS(Vector3.zero, OriginTransform.rotation, Vector3.one);
@@ -99,6 +100,31 @@ public class TeleportVive : MonoBehaviour {
                 originRotationMatrix * p2,
                 originRotationMatrix * p3,
                 originRotationMatrix * p0,
+=======
+<<<<<<< HEAD
+        {
+            // Rotate to match camera rig rotation
+            var originRotationMatrix = Matrix4x4.TRS(Vector3.zero, OriginTransform.rotation, Vector3.one);
+
+            BorderPointSet p = new BorderPointSet(new Vector3[] {
+                originRotationMatrix * p0,
+                originRotationMatrix * p1,
+                originRotationMatrix * p2,
+                originRotationMatrix * p3,
+                originRotationMatrix * p0,
+=======
+        {
+            // Rotate to match camera rig rotation
+            var originRotationMatrix = Matrix4x4.TRS(Vector3.zero, OriginTransform.rotation, Vector3.one);
+
+            BorderPointSet p = new BorderPointSet(new Vector3[] {
+                originRotationMatrix * p0,
+                originRotationMatrix * p1,
+                originRotationMatrix * p2,
+                originRotationMatrix * p3,
+                originRotationMatrix * p0,
+>>>>>>> origin/Rahul
+>>>>>>> 4a9f277581292e9ada7b7508925b2f6b04af3100
             });
             RoomBorder.Points = new BorderPointSet[]
             {
@@ -202,7 +228,15 @@ public class TeleportVive : MonoBehaviour {
                     // Begin teleport sequence
                     CurrentTeleportState = TeleportState.Teleporting;
                     TeleportTimeMarker = Time.time;
+<<<<<<< HEAD
                 }
+=======
+<<<<<<< HEAD
+                }
+=======
+                }
+>>>>>>> origin/Rahul
+>>>>>>> 4a9f277581292e9ada7b7508925b2f6b04af3100
                 else
                     CurrentTeleportState = TeleportState.None;
                 
@@ -233,12 +267,21 @@ public class TeleportVive : MonoBehaviour {
                 if (Pointer.CurrentParabolaAngleY >= 45) // Don't click when at max degrees
                     LastClickAngle = Pointer.CurrentPointVector;
 
+<<<<<<< HEAD
                 float angleClickDiff = Vector3.Angle(LastClickAngle, Pointer.CurrentPointVector);
+=======
+<<<<<<< HEAD
+                float angleClickDiff = Vector3.Angle(LastClickAngle, Pointer.CurrentPointVector);
+=======
+                float angleClickDiff = Vector3.Angle(LastClickAngle, Pointer.CurrentPointVector);
+>>>>>>> origin/Rahul
+>>>>>>> 4a9f277581292e9ada7b7508925b2f6b04af3100
                 if (IsClicking && Mathf.Abs(angleClickDiff) > HapticClickAngleStep)
                 {
                     LastClickAngle = Pointer.CurrentPointVector;
                     if (Pointer.PointOnNavMesh)
                         device.TriggerHapticPulse();
+<<<<<<< HEAD
                 }
 
                 // Trigger a stronger haptic pulse when "entering" a teleportable surface
@@ -252,6 +295,37 @@ public class TeleportVive : MonoBehaviour {
                     IsClicking = false;
             }
         }
+=======
+<<<<<<< HEAD
+                }
+
+                // Trigger a stronger haptic pulse when "entering" a teleportable surface
+                if (Pointer.PointOnNavMesh && !IsClicking)
+                {
+                    IsClicking = true;
+                    device.TriggerHapticPulse(750);
+                    LastClickAngle = Pointer.CurrentPointVector;
+                }
+                else if (!Pointer.PointOnNavMesh && IsClicking)
+                    IsClicking = false;
+            }
+        }
+=======
+                }
+
+                // Trigger a stronger haptic pulse when "entering" a teleportable surface
+                if (Pointer.PointOnNavMesh && !IsClicking)
+                {
+                    IsClicking = true;
+                    device.TriggerHapticPulse(750);
+                    LastClickAngle = Pointer.CurrentPointVector;
+                }
+                else if (!Pointer.PointOnNavMesh && IsClicking)
+                    IsClicking = false;
+            }
+        }
+>>>>>>> origin/Rahul
+>>>>>>> 4a9f277581292e9ada7b7508925b2f6b04af3100
         else //CurrentTeleportState == TeleportState.None
         {
             // At this point the user is not holding down on the touchpad at all or has canceled a teleport and hasn't
@@ -291,6 +365,7 @@ public class TeleportVive : MonoBehaviour {
 }
 
 /// \brief Represents the player's current use of the teleport machanic.
+<<<<<<< HEAD
 public enum TeleportState
 {
     /// The player is not using teleportation right now
@@ -299,4 +374,25 @@ public enum TeleportState
     Selecting,
     /// The player has selected a teleport destination and is currently teleporting now (fading in/out)
     Teleporting
+=======
+<<<<<<< HEAD
+public enum TeleportState
+{
+    /// The player is not using teleportation right now
+    None,
+    /// The player is currently selecting a teleport destination (holding down on touchpad)
+    Selecting,
+    /// The player has selected a teleport destination and is currently teleporting now (fading in/out)
+    Teleporting
+=======
+public enum TeleportState
+{
+    /// The player is not using teleportation right now
+    None,
+    /// The player is currently selecting a teleport destination (holding down on touchpad)
+    Selecting,
+    /// The player has selected a teleport destination and is currently teleporting now (fading in/out)
+    Teleporting
+>>>>>>> origin/Rahul
+>>>>>>> 4a9f277581292e9ada7b7508925b2f6b04af3100
 }

@@ -1,7 +1,19 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: d5fbceb93a72f4b71b067b732efd40d4
 folderAsset: yes
 timeCreated: 1488404592
+=======
+<<<<<<< HEAD
+guid: cb09365765c767e4799a0185c77cc902
+folderAsset: yes
+timeCreated: 1488404261
+=======
+guid: d5fbceb93a72f4b71b067b732efd40d4
+folderAsset: yes
+timeCreated: 1488404592
+>>>>>>> origin/Rahul
+>>>>>>> 4a9f277581292e9ada7b7508925b2f6b04af3100
 licenseType: Free
 DefaultImporter:
   userData: 
