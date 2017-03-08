@@ -32,14 +32,14 @@ public class InteractionPickup : MonoBehaviour
         // lastly, we check AttachedObjects.Count to make sure you pick up only 1 thing at a time
         if (hand.GetStandardInteractionButton() == true)// && hand.AttachedObjects.Count == 0)
         {
-            hand.AttachObject(gameObject);
+			hand.AttachObject(gameObject);
         }
     }
 
     // this happens when this object is attached to a hand, for whatever reason
     void OnAttachedToHand(Hand hand)
     {
-        GetComponent<Rigidbody>().isKinematic = true; // turn off physics so we can hold it
+       	GetComponent<Rigidbody>().isKinematic = true; // turn off physics so we can hold it
     }
 
     // this is like "Update" as long as we're holding something
@@ -47,7 +47,7 @@ public class InteractionPickup : MonoBehaviour
     {
         if (hand.GetStandardInteractionButton() == false)
         { // on Vive controller, this is trigger
-            hand.DetachObject(gameObject);
+			hand.DetachObject(gameObject);
         }
     }
 
