@@ -16,15 +16,17 @@ public class SimpleTeleport : MonoBehaviour {
 		ray = new Ray (this.transform.position, Vector3.down);
 
 		if (Physics.Raycast (ray, out groundCheck, length) == true) {
-			Debug.Log ("hit");
 			if (groundCheck.collider.tag == "Ground") {
-				Debug.Log ("ground");
-				if (Input.GetKeyDown(KeyCode.Space) ||
-					se.VRHand1.controller.GetPressDown (Valve.VR.EVRButtonId.k_EButton_Grip) ||
-					se.VRHand2.controller.GetPressDown (Valve.VR.EVRButtonId.k_EButton_Grip)) {
-
-					Debug.Log ("teleport");
-					player.transform.position = this.transform.position;
+				//Getting to here means that the disk is on the floor. Now check for input.
+				if (SteamVR.active == false) {
+					if (Input.GetKeyDown (KeyCode.Space)) {
+						player.transform.position = this.transform.position;
+					}
+				} else {
+					if (se.VRHand1.controller.GetPressDown (Valve.VR.EVRButtonId.k_EButton_Grip) ||
+						se.VRHand2.controller.GetPressDown (Valve.VR.EVRButtonId.k_EButton_Grip)) {
+						player.transform.position = this.transform.position;
+					}
 				}
 			}
 		}
