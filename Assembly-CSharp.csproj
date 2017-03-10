@@ -149,6 +149,7 @@
      <Compile Include="Assets\SteamVR\Scripts\SteamVR_UpdatePoses.cs" />
      <Compile Include="Assets\SteamVR\Scripts\SteamVR_Utils.cs" />
      <Compile Include="Assets\_TronPuzzle\Scripts\BasicPickup.cs" />
+     <Compile Include="Assets\_TronPuzzle\Scripts\FallDetect.cs" />
      <Compile Include="Assets\_TronPuzzle\Scripts\GazeTrigger.cs" />
      <Compile Include="Assets\_TronPuzzle\Scripts\Generator.cs" />
      <Compile Include="Assets\_TronPuzzle\Scripts\Hover.cs" />
