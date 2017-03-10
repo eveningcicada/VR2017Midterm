@@ -15,7 +15,8 @@ public class SwitchEnvironment : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		room1.SetActive (true);
+		room2.SetActive (false);
 	}
 	
 	// Update is called once per frame
