@@ -41,6 +41,8 @@ namespace Valve.VR.InteractionSystem
 		private Quaternion attachRotation;
 		private Transform attachEaseInTransform;
 
+        public float dampner = Mathf.Clamp01(1);
+
 		public UnityEvent onPickUp;
 		public UnityEvent onDetachFromHand;
 
@@ -184,7 +186,7 @@ namespace Valve.VR.InteractionSystem
 			}
 
 			Vector3 r = transform.TransformPoint( rb.centerOfMass ) - position;
-			rb.velocity = velocity + Vector3.Cross( angularVelocity, r );
+			rb.velocity = velocity + Vector3.Cross( angularVelocity, r ) * dampner;
 			rb.angularVelocity = angularVelocity;
 
 			// Make the object travel at the release velocity for the amount
