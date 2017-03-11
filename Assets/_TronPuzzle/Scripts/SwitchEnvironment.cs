@@ -13,6 +13,8 @@ public class SwitchEnvironment : MonoBehaviour {
 	public GameObject room1;
 	public GameObject room2;
 
+	public GameObject disc;
+
 	// Use this for initialization
 	void Start () {
 		room1.SetActive (true);
@@ -32,6 +34,14 @@ public class SwitchEnvironment : MonoBehaviour {
 					room2.SetActive (true);
 				}
 			}
+
+			if (VRHand1.controller.GetPressDown (Valve.VR.EVRButtonId.k_EButton_Grip)) {
+				VRHand1.AttachObject(disc);
+			}
+			if (VRHand2.controller.GetPressDown (Valve.VR.EVRButtonId.k_EButton_Grip)) {
+				VRHand2.AttachObject(disc);
+			}
+
 		} else {
 			if (fallbackHand.GetStandardInteractionButtonDown ()) {
 				if (room1.activeInHierarchy == false) {
@@ -41,6 +51,11 @@ public class SwitchEnvironment : MonoBehaviour {
 					room1.SetActive (false);
 					room2.SetActive (true);
 				}
+			}
+
+			if (Input.GetKeyDown (KeyCode.Q)) {
+				fallbackHand.AttachObject(disc);
+				disc.GetComponent<Rigidbody>().isKinematic = true;
 			}
 		}
 	}
